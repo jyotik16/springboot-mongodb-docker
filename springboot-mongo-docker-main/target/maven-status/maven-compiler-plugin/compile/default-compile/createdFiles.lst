@@ -1,0 +1,3 @@
+com/javatechie/docker/compose/model/Book.class
+com/javatechie/docker/compose/dao/BookRepository.class
+com/javatechie/docker/compose/SpringbootMongodbDockerApplication.class
