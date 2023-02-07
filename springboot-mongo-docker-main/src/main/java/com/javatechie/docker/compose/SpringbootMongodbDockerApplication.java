@@ -28,6 +28,7 @@ public class SpringbootMongodbDockerApplication {
 	}
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(SpringbootMongodbDockerApplication.class, args);
 	}
 
