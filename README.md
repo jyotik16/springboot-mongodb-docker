@@ -67,8 +67,34 @@ Now you have the databse created inside the docker mysql
 
 You can import the sql by following command
 
-    docker exec -i docker-mysql mysql -uroot -proot demo <demo.sql
+    `docker exec -i docker-mysql mysql -uroot -proot demo <demo.sql`
 
+**Network**
+    `docker network create report-mysql-net`
+                                                                   
+**Connect sql to network**
+    `docker network connect report-mysql-net mysql-docker`
+ where reort-mysql-net= network name, mysql-docker= container name of mysql
+                                                                   
+ **Verfiying**
+  `docker network inspect report-mysql-net`
+                                                                   
+   ```"Containers": {
+            "9717dbba631c2584136d7b8dbaf47f4fe6f69ed7e46a01880cc64159548baaa6": {
+                "Name": "mysql-docker",
+                "EndpointID": "e680e61359df3ab3aee861583ac832f2f806acf70081d6f9c64dfb66d462f9dd",
+                "MacAddress": "02:42:ac:13:00:02",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            }
+        }
+  ```  
+  **Run App by connecting to the network**  
+  ` docker run -p 9090:8080 --name docker-spring-boot-user --net report-mysql-net -e MYSQL_HOST=mysql-docker -e MYSQL_
+USER=root -e MYSQL_PASSWORD=root -e MYSQL_PORT=3307 docker-spring-boot-user`                                                                   
+ 
+### 2 approach                                                                 
+                                                                   
 **Running the Project inside the Docker**
 
 `docker run -t --link mysql-docker:mysql -p 8080:8080 docker-spring-boot-user`
