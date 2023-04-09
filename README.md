@@ -55,6 +55,10 @@ Now we can check by logging in to MySQL.
 *(mysql-docker is the tag name we have given while creating)*
 Now you have the databse created inside the docker mysql
 
+*After entering into bash run below cmd will make you enter into sql shell*
+    mysql -proot -uroot 
+where -p=password and -u=username
+
 You can import the sql by following command
 
     docker exec -i docker-mysql mysql -uroot -proot demo <demo.sql
