@@ -29,7 +29,9 @@ This contains the commands for generating Docker image
 **ENTRYPOINT** will execute the command given.
 (Change the target jar name if you want)
 
+
 `docker build -f Dockerfile -t docker-spring-boot-user .`
+
 From the cmd enter the command where –f <FILENAME>
 -t <tag-name-for-Docker-image> and **‘.’** is the file path that is current as of now.
 This above cmd will create a **image** of your App.
@@ -70,6 +72,10 @@ You can import the sql by following command
 **Running the Project inside the Docker**
 
 `docker run -t --link mysql-docker:mysql -p 8080:8080 docker-spring-boot-user`
+                                                                   
+     mysql-docker=container name
+     mysql = image name 
+     docker-spring-boot-user = image name                                                              
 
 **--link** will link the MySQL container and will be exposing the port 8080
 
