@@ -32,12 +32,14 @@ This contains the commands for generating Docker image
 `docker build -f Dockerfile -t docker-spring-boot-user .`
 From the cmd enter the command where –f <FILENAME>
 -t <tag-name-for-Docker-image> and **‘.’** is the file path that is current as of now.
+This above cmd will create a **image** of your App.
 
 This will execute the commands from the docker file. Initially running may take some time as it downloads a **openjdk** from the repository.
 
     docker image ls
 
 This command will give you list of images you have and you can find one with the name **docker-spring-boot-user.**
+
 
 **Setup MySQL**
 
